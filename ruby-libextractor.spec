@@ -1,5 +1,5 @@
 Summary:	Ruby binding for libextractor
-Summary(pl):	Wi±zanie jêzyka Ruby dla biblioteki libextractor
+Summary(pl.UTF-8):   WiÄ…zanie jÄ™zyka Ruby dla biblioteki libextractor
 Name:		ruby-libextractor
 Version:	0.9
 Release:	1
@@ -17,8 +17,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Ruby binding for libextractor.
 
-%description -l pl
-Wi±zanie jêzyka Ruby dla biblioteki libextractor.
+%description -l pl.UTF-8
+WiÄ…zanie jÄ™zyka Ruby dla biblioteki libextractor.
 
 %prep
 %setup -q -n libextractor-ruby-%{version}
