@@ -1,5 +1,5 @@
 Summary:	Ruby binding for libextractor
-Summary(pl.UTF-8):   Wiązanie języka Ruby dla biblioteki libextractor
+Summary(pl.UTF-8):	Wiązanie języka Ruby dla biblioteki libextractor
 Name:		ruby-libextractor
 Version:	0.9
 Release:	1
