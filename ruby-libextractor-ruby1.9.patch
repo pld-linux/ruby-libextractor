@@ -1,0 +1,45 @@
+--- libextractor-ruby-0.9/extractor.c~	2005-12-09 19:49:54.000000000 +0100
++++ libextractor-ruby-0.9/extractor.c	2010-03-02 11:58:37.866187355 +0100
+@@ -1,5 +1,5 @@
+ #include "ruby.h"
+-#include "intern.h"
++#include "ruby/intern.h"
+ #include <extractor.h>
+ 
+ static VALUE cExtractor;
+@@ -36,7 +36,7 @@
+     struct rbExctractor *extractor;
+     Check_Type(filename, T_STRING);
+     Data_Get_Struct(self, struct rbExctractor, extractor);
+-    keywords = EXTRACTOR_getKeywords(extractor->extractor, RSTRING(filename)->ptr);
++    keywords = EXTRACTOR_getKeywords(extractor->extractor, RSTRING_PTR(filename));
+     hash = rb_hash_new();
+     for(k=keywords; k; k=k->next) {
+         VALUE ary, key, value;
+@@ -59,7 +59,7 @@
+     struct rbExctractor *extractor;
+     Check_Type(data, T_STRING);
+     Data_Get_Struct(self, struct rbExctractor, extractor);
+-    keywords = EXTRACTOR_getKeywords2(extractor->extractor, RSTRING(data)->ptr, RSTRING(data)->len);
++    keywords = EXTRACTOR_getKeywords2(extractor->extractor, RSTRING_PTR(data), RSTRING_LEN(data));
+     hash = rb_hash_new();
+     for(k=keywords; k; k=k->next) {
+         VALUE ary, key, value;
+@@ -90,7 +90,7 @@
+ 
+ static VALUE ex_s_binary_encode(VALUE self, VALUE data) {
+     char *ptr;
+-    ptr = EXTRACTOR_binaryEncode((unsigned char *)RSTRING(data)->ptr,RSTRING(data)->len);
++    ptr = EXTRACTOR_binaryEncode((unsigned char *)RSTRING_PTR(data),RSTRING_LEN(data));
+     return ptr ? rb_str_new2(ptr) : Qnil;
+ }
+ 
+@@ -98,7 +98,7 @@
+     int ret;
+     unsigned char *buf;
+     size_t size;
+-    ret = EXTRACTOR_binaryDecode(RSTRING(encoded)->ptr, &buf, &size);
++    ret = EXTRACTOR_binaryDecode(RSTRING_PTR(encoded), &buf, &size);
+     if (ret) {
+         rb_raise(rb_eStandardError, "decode error");
+     }
