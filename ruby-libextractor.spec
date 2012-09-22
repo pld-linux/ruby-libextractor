@@ -3,7 +3,7 @@ Summary:	Ruby binding for libextractor
 Summary(pl.UTF-8):	Wiązanie języka Ruby dla biblioteki libextractor
 Name:		ruby-%{pkgname}
 Version:	0.9
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages
 Source0:	http://gnunet.org/libextractor/download/%{pkgname}-ruby-%{version}.tar.gz
