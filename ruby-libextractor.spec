@@ -1,3 +1,6 @@
+# NOTE: slightly newer version available at:
+# http://ftp.gnu.org/gnu/libextractor/libextractor-ruby-0.1.gem
+# but still doesn't build with libextractor 1+
 %define pkgname libextractor
 Summary:	Ruby binding for libextractor
 Summary(pl.UTF-8):	Wiązanie języka Ruby dla biblioteki libextractor
