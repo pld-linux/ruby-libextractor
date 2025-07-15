@@ -29,7 +29,7 @@ Wiązanie języka Ruby dla biblioteki libextractor.
 
 %prep
 %setup -q -n libextractor-ruby-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__ruby} extconf.rb
